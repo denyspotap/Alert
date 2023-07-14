@@ -1,0 +1,14 @@
+<template>
+    <lightning-card  title="Alert List">
+        <template for:each={alerts} for:item="alert">
+            <div class="slds-box" key={alert.id}>
+    <c-toast if:true={alert.isToast}
+    message={alert.Message__c} alert-style={alert.Style__c}></c-toast>
+        <c-alert if:true={alert.isAlert}
+            message={alert.Message__c} alert-style={alert.Style__c}></c-alert>
+        <c-modal if:true={alert.isModal} class="slds-modal_large"
+            message={alert.Message__c} alert-style={alert.Style__c}></c-modal>
+    </div>
+    </template>
+    </lightning-card> 
+</template>
